@@ -1,0 +1,30 @@
+{
+  "_meta": {
+    "updated": "2026-04-20T00:00:00+00:00",
+    "scholar_id": "udy6g1kAAAAJ",
+    "source": "Google Scholar via scholarly"
+  },
+  "metrics": {
+    "citations":  210,
+    "hIndex":     5,
+    "i10Index":   4,
+    "citations5": 210,
+    "hIndex5":    5,
+    "i10Index5":  4
+  },
+  "publications": [
+    { "title": "Light exposure behaviors predict mood, memory and sleep quality",                                                                                     "year": "2023", "journal": "Scientific Reports",                              "authors": "Mushfiqul Anwar Siraji, Manuel Spitschan, Vineetha Kalavally, Shamsul Haque",                                                                             "citations": 66 },
+    { "title": "Effects of daytime electric light exposure on human alertness and higher cognitive functions: A systematic review",                                    "year": "2022", "journal": "Frontiers in Psychology",                         "authors": "Mushfiqul Anwar Siraji, Vineetha Kalavally, Alexander Schaefer, Shamsul Haque",                                                                          "citations": 74 },
+    { "title": "An inventory of human light exposure-related behaviour",                                                                                              "year": "2023", "journal": "Scientific Reports",                              "authors": "Mushfiqul Anwar Siraji, Robin Lazar, Jelena van Duijnhoven, Luc Schlangen, Shamsul Haque, Vineetha Kalavally, Céline Vetter, Gary Glickman, Karin Smolders, Manuel Spitschan", "citations": 22 },
+    { "title": "Psychometric validation of revised Olweus Bully/Victim Questionnaire (OBVQ-R) among adolescents in Bangladesh",                                       "year": "2023", "journal": "Asian Journal of Psychiatry",                     "authors": "Sharmin Mahmood, Mushfiqul Anwar Siraji, Rumana Naher, Noemi Arato, Zoltan Kalo",                                                                        "citations": 11 },
+    { "title": "Effects of daytime exposure to short-wavelength-enriched white light on alertness and cognitive function among moderately sleep-restricted university students", "year": "2024", "journal": "Building and Environment",           "authors": "Mushfiqul Anwar Siraji, Kimberly L Grant, Alexander Schaefer, Shamsul Haque, Shadab A Rahman, Steven W Lockley, Vineetha Kalavally",                    "citations": 9 },
+    { "title": "Validation of the Bangla Communication Scale among Bangladeshi adolescents: A classical test theory and item response theory approach",                "year": "2023", "journal": "Asian Journal of Psychiatry",                     "authors": "Mushfiqul Anwar Siraji, Naima Jahan, Zannatun Borak",                                                                                                    "citations": 5 },
+    { "title": "Primer on reproducible research in R: Enhancing transparency and scientific rigor",                                                                   "year": "2023", "journal": "Clocks & Sleep",                                  "authors": "Mushfiqul Anwar Siraji, Mizanur Rahman",                                                                                                                 "citations": 4 },
+    { "title": "Psychometric evaluation of the Bangla-translated Rotter's Internal-External Scale through classical test theory and item response theory",             "year": "2022", "journal": "Frontiers in Psychology",                         "authors": "Mushfiqul Anwar Siraji, Shamsul Haque",                                                                                                                  "citations": 4 },
+    { "title": "Light exposure behaviour assessment (LEBA): A novel self-reported instrument to capture light exposure-related behaviour",                             "year": "2022", "journal": "CIE Australia Lighting Research Conference 2022", "authors": "Mushfiqul Anwar Siraji, Robin Lazar, Jelena van Duijnhoven, Luc Schlangen, Shamsul Haque, Vineetha Kalavally",                                          "citations": 4 },
+    { "title": "Development of a multidomain gender norm attitude scale for youth in Bangladesh",                                                                      "year": "2024", "journal": "Preventive Medicine Reports",                      "authors": "Ashraful Islam, Mushfiqul Anwar Siraji, Mahmudul Haque, Md Shamsul Chowdhury",                                                                           "citations": 3 },
+    { "title": "The Bangla Big Five Inventory-2: a comprehensive psychometric validation",                                                                             "year": "2025", "journal": "Scientific Reports",                              "authors": "Mushfiqul Anwar Siraji, Farhana Karim, Christopher J Soto, Shamsul Haque",                                                                               "citations": 3 },
+    { "title": "Validation of the Five Facet Mindfulness Questionnaire-Bangla using classical test theory and item response theory",                                   "year": "2023", "journal": "Mindfulness",                                     "authors": "Mushfiqul Anwar Siraji, Mizanur Rahman, Bijoy Saha, Shamsul Haque",                                                                                     "citations": 2 },
+    { "title": "Psychometric assessment of the Bangla version of General Health Questionnaire-12 (GHQ-12)",                                                           "year": "2024", "journal": "Psychological Test Adaptation and Development",   "authors": "Ashraful Islam, Mushfiqul Anwar Siraji, Shirin Shaoli, Rezaul Jerin, Sefat Elahi, Tasneem Ahmed, Shamsul Haque",                                         "citations": 2 }
+  ]
+}
