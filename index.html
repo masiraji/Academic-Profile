@@ -32,6 +32,9 @@
       <button data-tab="collaborations">Global Collaborations</button>
       <button data-tab="contact">Contact</button>
     </nav>
+    <button id="dark-toggle" onclick="toggleDark()" aria-label="Toggle dark mode">
+      <span id="dark-icon">🌙</span>
+    </button>
   </div>
 </header>
 
@@ -51,7 +54,7 @@
       </div>
       <div class="hero-links">
         <a class="ext-link" href="https://orcid.org/0000-0003-0127-9982" target="_blank">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-2 17H8V9h2v8zm-1-9.5a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zM17 17h-2v-4c0-1.105-.895-2-2-2s-2 .895-2 2v4h-2V9h2v1.1c.552-.714 1.446-1.1 2.4-1.1 1.878 0 3.6 1.522 3.6 3.4V17z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width:13px;height:13px"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4" fill="white"/></svg>
           ORCID: 0000-0003-0127-9982
         </a>
         <a class="ext-link" href="https://scholar.google.com/citations?user=udy6g1kAAAAJ&hl=en" target="_blank">
@@ -65,6 +68,10 @@
         <a class="ext-link" href="mailto:mushfiqul.siraji@northsouth.edu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
           mushfiqul.siraji@northsouth.edu
+        </a>
+        <a class="ext-link" href="cv/Mushfiqul_Anwar_Siraji_CV.docx" download style="color:var(--blue);font-weight:600">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:13px;height:13px"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download CV
         </a>
       </div>
     </div>
@@ -403,54 +410,25 @@
   <section id="tab-contact" class="tab-section">
     <div class="card" style="margin-top:0">
       <h3>Contact</h3>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <p>I welcome inquiries about research collaborations, PhD supervision, and reproducible research training. For consultancy or media requests, please use the form.</p>
-          <div class="contact-detail">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-            <a href="mailto:mushfiqul.siraji@northsouth.edu">mushfiqul.siraji@northsouth.edu</a>
-          </div>
-          <div class="contact-detail">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Department of History &amp; Philosophy, North South University, Dhaka, Bangladesh
-          </div>
-          <div class="contact-detail">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.1 5.17 2 2 0 015.08 3h3.06a2 2 0 012 1.7c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.1 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17.9z"/></svg>
-            +880 1601611765
-          </div>
-          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
-            <a href="https://orcid.org/0000-0003-0127-9982" target="_blank" class="badge" style="text-decoration:none">ORCID Profile</a>
-            <a href="https://scholar.google.com/citations?user=udy6g1kAAAAJ&hl=en" target="_blank" class="badge" style="text-decoration:none">Google Scholar</a>
-            <a href="https://www.scopus.com/authid/detail.uri?authorId=57419466600" target="_blank" class="badge" style="text-decoration:none">Scopus</a>
-          </div>
+      <div class="contact-info">
+        <p>I welcome inquiries about research collaborations, PhD supervision, and reproducible research training. For consultancy or media requests, please reach out by email.</p>
+        <div class="contact-detail">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+          <a href="mailto:mushfiqul.siraji@northsouth.edu">mushfiqul.siraji@northsouth.edu</a>
         </div>
-        <div>
-          <!-- Formspree — free tier, no login needed -->
-          <form class="contact-form" action="https://formspree.io/f/xpwpynkk" method="POST">
-            <div class="form-group">
-              <label>Your Name</label>
-              <input type="text" name="name" placeholder="Full name" required>
-            </div>
-            <div class="form-group">
-              <label>Email Address</label>
-              <input type="email" name="email" placeholder="your@email.com" required>
-            </div>
-            <div class="form-group">
-              <label>Subject</label>
-              <select name="subject">
-                <option>Research Collaboration</option>
-                <option>PhD Inquiry</option>
-                <option>Speaking / Media</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Message</label>
-              <textarea name="message" rows="5" placeholder="Your message…" required></textarea>
-            </div>
-            <button type="submit" class="btn-submit">Send Message</button>
-            <p style="font-size:11px;color:var(--text-soft);margin-top:4px">Powered by Formspree — free &amp; no server needed. Replace the form action URL with your own Formspree endpoint.</p>
-          </form>
+        <div class="contact-detail">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Department of History &amp; Philosophy, North South University, Dhaka, Bangladesh
+        </div>
+        <div class="contact-detail">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.1 5.17 2 2 0 015.08 3h3.06a2 2 0 012 1.7c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.1 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17.9z"/></svg>
+          +880 1601611765
+        </div>
+        <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+          <a href="https://orcid.org/0000-0003-0127-9982" target="_blank" class="badge" style="text-decoration:none">ORCID Profile</a>
+          <a href="https://scholar.google.com/citations?user=udy6g1kAAAAJ&hl=en" target="_blank" class="badge" style="text-decoration:none">Google Scholar</a>
+          <a href="https://www.scopus.com/authid/detail.uri?authorId=57419466600" target="_blank" class="badge" style="text-decoration:none">Scopus</a>
+          <a href="cv/Mushfiqul_Anwar_Siraji_CV.docx" download class="badge" style="text-decoration:none">Download CV</a>
         </div>
       </div>
     </div>
@@ -472,6 +450,18 @@
 <script src="js/network.js"></script>
 <script src="js/map.js"></script>
 <script>
+// ── Dark mode ───────────────────────────────────
+function toggleDark() {
+  const isDark = document.body.classList.toggle('dark');
+  document.getElementById('dark-icon').textContent = isDark ? '☀️' : '🌙';
+  localStorage.setItem('darkMode', isDark ? '1' : '0');
+}
+// Restore preference
+if (localStorage.getItem('darkMode') === '1') {
+  document.body.classList.add('dark');
+  document.getElementById('dark-icon').textContent = '☀️';
+}
+
 // ── Load & merge Google Scholar data ────────────
 async function loadScholarData() {
   try {

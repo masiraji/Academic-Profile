@@ -544,6 +544,61 @@ footer {
 footer a { color: rgba(255,255,255,.8); text-decoration: none; }
 footer a:hover { color: white; }
 
+/* ── Dark Mode ───────────────────────────────────── */
+body.dark {
+  --blue:        oklch(62% 0.14 240);
+  --blue-mid:    oklch(70% 0.12 240);
+  --blue-light:  oklch(28% 0.06 240);
+  --blue-pale:   oklch(22% 0.04 240);
+  --text:        oklch(92% 0.01 240);
+  --text-mid:    oklch(72% 0.01 240);
+  --text-soft:   oklch(55% 0.01 240);
+  --border:      oklch(28% 0.02 240);
+  --white:       oklch(16% 0.02 240);
+  --bg:          oklch(12% 0.02 240);
+}
+body.dark #topbar          { background: oklch(14% 0.06 240); }
+body.dark #site-header     { background: oklch(16% 0.02 240); }
+body.dark #hero            { background: oklch(16% 0.02 240); }
+body.dark .metrics-box     { background: oklch(20% 0.03 240); }
+body.dark .pub-tag.oa      { background: #1b3a1c; color: #6fcf7a; }
+body.dark .pub-tag.q1      { background: #0d2340; color: #64b0f4; }
+body.dark .pub-tag.conf    { background: #2e2000; color: #f9c74f; }
+body.dark .grant-status.ongoing   { background: #1b3a1c; color: #6fcf7a; }
+body.dark .grant-status.completed { background: #0d2340; color: #64b0f4; }
+body.dark .sdg-card        { box-shadow: 0 2px 12px rgba(0,0,0,.4); }
+
+/* Dark mode toggle button */
+#dark-toggle {
+  background: none;
+  border: none;
+  padding: 6px 8px;
+  font-size: 15px;
+  cursor: pointer;
+  color: var(--text-soft);
+  opacity: 0.5;
+  transition: opacity .2s;
+  line-height: 1;
+  flex-shrink: 0;
+}
+#dark-toggle:hover { opacity: 1; }
+
+/* CV download button */
+.btn-cv {
+  display: inline-flex !important; align-items: center; gap: 7px;
+  background: var(--blue);
+  color: white;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 600;
+  transition: background .2s, transform .15s;
+  margin-top: 10px;
+}
+.btn-cv:hover { background: var(--blue-mid); transform: translateY(-1px); }
+.btn-cv svg { width: 14px; height: 14px; flex-shrink: 0; }
+
 /* ── Responsive ──────────────────────────────────── */
 @media (max-width: 800px) {
   .hero-inner { grid-template-columns: 1fr; gap: 16px; }
