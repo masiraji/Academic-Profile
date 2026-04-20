@@ -65,9 +65,9 @@
           <svg viewBox="0 0 24 24" fill="currentColor" style="width:13px;height:13px"><circle cx="12" cy="12" r="10"/></svg>
           Scopus
         </a>
-        <a class="ext-link" href="mailto:mushfiqul.siraji@northsouth.edu">
+        <a class="ext-link" href="/cdn-cgi/l/email-protection#ee839b9d8688879f9b82c09d879c8f8487ae80819c9a869d819b9a86c08b8a9b">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-          mushfiqul.siraji@northsouth.edu
+          <span class="__cf_email__" data-cfemail="6f021a1c0709061e1a03411c061d0e05062f01001d1b071c001a1b07410a0b1a">[email&#160;protected]</span>
         </a>
         <a class="ext-link" href="cv/Mushfiqul_Anwar_Siraji_CV.docx" download style="color:var(--blue);font-weight:600">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:13px;height:13px"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -414,7 +414,7 @@
         <p>I welcome inquiries about research collaborations, PhD supervision, and reproducible research training. For consultancy or media requests, please reach out by email.</p>
         <div class="contact-detail">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-          <a href="mailto:mushfiqul.siraji@northsouth.edu">mushfiqul.siraji@northsouth.edu</a>
+          <a href="/cdn-cgi/l/email-protection#a0cdd5d3c8c6c9d1d5cc8ed3c9d2c1cac9e0cecfd2d4c8d3cfd5d4c88ec5c4d5"><span class="__cf_email__" data-cfemail="e38e96908b858a92968fcd908a9182898aa38d8c91978b908c96978bcd868796">[email&#160;protected]</span></a>
         </div>
         <div class="contact-detail">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -444,7 +444,7 @@
 </footer>
 
 <!-- Scripts -->
-<script src="js/data.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/data.js"></script>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://unpkg.com/topojson-client@3/dist/topojson-client.min.js"></script>
 <script src="js/network.js"></script>
@@ -486,7 +486,14 @@ async function loadScholarData() {
         const match = CV.publications.find(p =>
           p.title.toLowerCase().includes(sp.title.toLowerCase().slice(0, 40))
         );
-        if (match) match.citations = sp.citations;
+        if (match) {
+          match.citations = sp.citations || match.citations;
+          if (sp.doi)         match.doi       = 'https://doi.org/' + sp.doi;
+          if (sp.if_approx)   match.if_score  = sp.if_approx;
+          if (sp.cite_score)  match.cite_score = sp.cite_score;
+          if (sp.quartile)    match.quartile  = sp.quartile;
+          if (sp.open_access !== undefined) match.oa = sp.open_access;
+        }
       });
 
       // Detect new publications not in manual list
@@ -591,7 +598,9 @@ function renderPublications(filter) {
               ${p.oa ? '<span class="pub-tag oa">Open Access</span>' : ''}
               ${p.quartile ? `<span class="pub-tag q1">${p.quartile}</span>` : ''}
               ${p.if_score ? `<span class="pub-tag">IF: ${p.if_score}</span>` : ''}
+              ${p.cite_score ? `<span class="pub-tag">CiteScore: ${p.cite_score}</span>` : ''}
               ${p.type === 'conference' ? '<span class="pub-tag conf">Conference</span>' : ''}
+              ${p._auto ? '<span class="pub-tag" style="background:#fff3e0;color:#e65100">Auto-detected</span>' : ''}
             </div>
           </div>
           <div class="pub-citations">
