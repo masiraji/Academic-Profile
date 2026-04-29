@@ -425,10 +425,6 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           Department of History &amp; Philosophy, North South University, Dhaka, Bangladesh
         </div>
-        <div class="contact-detail">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.1 5.17 2 2 0 015.08 3h3.06a2 2 0 012 1.7c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.1 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17.9z"/></svg>
-          +880 1601611765
-        </div>
         <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
           <a href="https://orcid.org/0000-0003-0127-9982" target="_blank" class="badge" style="text-decoration:none">ORCID Profile</a>
           <a href="https://scholar.google.com/citations?user=udy6g1kAAAAJ&amp;hl=en" target="_blank" class="badge" style="text-decoration:none">Google Scholar</a>
@@ -491,7 +487,8 @@ function updateCounts() {
   // Nav tab publication count
   document.querySelectorAll('nav#main-nav button').forEach(b => {
     if (b.dataset.tab === 'publications') {
-      b.innerHTML = `Publications <span style="font-size:11px;opacity:.6">(${CV.publications.length})</span>`;
+      const peerCount = CV.publications.filter(p => !p.pub_type || p.pub_type === 'peer-reviewed').length;
+      b.innerHTML = `Publications <span style="font-size:11px;opacity:.6">(${peerCount})</span>`;
     }
   });
 
