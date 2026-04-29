@@ -16,7 +16,7 @@
   <span>North South University · Department of History & Philosophy · Bangladesh</span>
   <div class="toplinks">
     <a href="https://orcid.org/0000-0003-0127-9982" target="_blank">ORCID</a>
-    <a href="https://scholar.google.com/citations?user=udy6g1kAAAAJ&hl=en" target="_blank">Google Scholar</a>
+    <a href="https://scholar.google.com/citations?user=udy6g1kAAAAJ&amp;hl=en" target="_blank">Google Scholar</a>
     <a href="https://www.scopus.com/authid/detail.uri?authorId=57419466600" target="_blank">Scopus</a>
   </div>
 </div>
@@ -57,7 +57,7 @@
           <svg viewBox="0 0 24 24" fill="currentColor" style="width:13px;height:13px"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4" fill="white"/></svg>
           ORCID: 0000-0003-0127-9982
         </a>
-        <a class="ext-link" href="https://scholar.google.com/citations?user=udy6g1kAAAAJ&hl=en" target="_blank">
+        <a class="ext-link" href="https://scholar.google.com/citations?user=udy6g1kAAAAJ&amp;hl=en" target="_blank">
           <svg viewBox="0 0 24 24" fill="currentColor" style="width:13px;height:13px"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.838 3.94A8 8 0 0112 11a8 8 0 017.162 2.44L24 9.5z"/></svg>
           Google Scholar
         </a>
@@ -78,18 +78,19 @@
     <div class="metrics-box">
       <h4>Research Metrics</h4>
       <div class="metric-item">
-        <span class="metric-val">210</span>
+        <span class="metric-val" id="metric-citations">224</span>
         <span class="metric-lbl">Total Citations</span>
       </div>
       <div class="metric-item">
-        <span class="metric-val">5</span>
+        <span class="metric-val" id="metric-hindex">5</span>
         <span class="metric-lbl">h-index</span>
       </div>
       <div class="metric-item">
-        <span class="metric-val">4</span>
+        <span class="metric-val" id="metric-i10">5</span>
         <span class="metric-lbl">i10-index</span>
       </div>
-      <div class="metrics-source">Source: Google Scholar, March 2026</div>
+      <div class="metrics-source" id="metrics-source-line">Source: Google Scholar · Updated manually</div>
+      <div style="font-size:10px;color:var(--text-soft);margin-top:2px;line-height:1.4">Auto-updates daily via GitHub Action</div>
     </div>
   </div>
 </section>
@@ -197,12 +198,6 @@
       </div>
     </div>
 
-    <!-- Citations per year chart -->
-    <div class="card" style="margin-top:24px">
-      <h3>Citations per Year <span class="count" id="count-citations-total"></span></h3>
-      <div id="citations-chart" style="width:100%;height:180px;position:relative"></div>
-    </div>
-
     <div class="section-grid" style="margin-top:24px">
       <!-- Grants -->
       <div class="card">
@@ -305,14 +300,18 @@
   <section id="tab-publications" class="tab-section">
     <div class="card" style="margin-top:0">
       <h3>Research Output <span class="count" id="count-pubs"></span></h3>
-      <div class="pub-filters">
-        <button class="pub-filter active" data-filter="all">All</button>
-        <button class="pub-filter" data-filter="2025">2025</button>
-        <button class="pub-filter" data-filter="2024">2024</button>
-        <button class="pub-filter" data-filter="2023">2023</button>
-        <button class="pub-filter" data-filter="2022">2022</button>
-        <button class="pub-filter" data-filter="oa">Open Access</button>
-        <button class="pub-filter" data-filter="q1">Q1 Journals</button>
+      <div class="pub-filters" id="pub-filters">
+        <button class="pub-filter" data-filter="peer-reviewed">Peer-reviewed (<span class="filter-count"></span>)</button>
+        <button class="pub-filter" data-filter="book-chapter">Books &amp; Chapters (<span class="filter-count"></span>)</button>
+        <button class="pub-filter" data-filter="preprint">Preprint (<span class="filter-count"></span>)</button>
+        <button class="pub-filter" data-filter="dataset">Dataset (<span class="filter-count"></span>)</button>
+        <button class="pub-filter" data-filter="oa">Open Access (<span class="filter-count"></span>)</button>
+        <button class="pub-filter" data-filter="q1">Q1 Journals (<span class="filter-count"></span>)</button>
+        <button class="pub-filter" data-filter="2025">2025 (<span class="filter-count"></span>)</button>
+        <button class="pub-filter" data-filter="2024">2024 (<span class="filter-count"></span>)</button>
+        <button class="pub-filter" data-filter="2023">2023 (<span class="filter-count"></span>)</button>
+        <button class="pub-filter" data-filter="2022">2022 (<span class="filter-count"></span>)</button>
+        <button class="pub-filter active" data-filter="all">All (<span class="filter-count"></span>)</button>
       </div>
       <div class="pub-list" id="pub-list"></div>
     </div>
@@ -432,7 +431,7 @@
         </div>
         <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
           <a href="https://orcid.org/0000-0003-0127-9982" target="_blank" class="badge" style="text-decoration:none">ORCID Profile</a>
-          <a href="https://scholar.google.com/citations?user=udy6g1kAAAAJ&hl=en" target="_blank" class="badge" style="text-decoration:none">Google Scholar</a>
+          <a href="https://scholar.google.com/citations?user=udy6g1kAAAAJ&amp;hl=en" target="_blank" class="badge" style="text-decoration:none">Google Scholar</a>
           <a href="https://www.scopus.com/authid/detail.uri?authorId=57419466600" target="_blank" class="badge" style="text-decoration:none">Scopus</a>
           <a href="cv/Mushfiqul_Anwar_Siraji_CV.docx" download class="badge" style="text-decoration:none">Download CV</a>
         </div>
@@ -445,7 +444,7 @@
 <footer>
   <p>© 2026 Mushfiqul Anwar Siraji · North South University, Bangladesh ·
   <a href="https://orcid.org/0000-0003-0127-9982" target="_blank">ORCID</a> ·
-  <a href="https://scholar.google.com/citations?user=udy6g1kAAAAJ&hl=en" target="_blank">Google Scholar</a></p>
+  <a href="https://scholar.google.com/citations?user=udy6g1kAAAAJ&amp;hl=en" target="_blank">Google Scholar</a></p>
   <p style="margin-top:4px;opacity:.5">masiraji.com · Hosted on GitHub Pages · Last updated April 2026</p>
 </footer>
 
@@ -554,7 +553,7 @@ function renderCitationsChart(citationsByYear) {
     .attr('y', d => y(d.cites))
     .attr('width', x.bandwidth())
     .attr('height', d => iH - y(d.cites))
-    .attr('fill', 'oklch(44% 0.13 240)')
+    .attr('fill', '#1a5296')
     .attr('rx', 3)
     .attr('opacity', 0.85);
 
@@ -565,20 +564,20 @@ function renderCitationsChart(citationsByYear) {
     .attr('text-anchor', 'middle')
     .attr('font-size', '12px')
     .attr('font-family', 'Inter, sans-serif')
-    .attr('fill', 'oklch(38% 0.01 240)')
+    .attr('fill', '#4b5563')
     .attr('font-weight', '600')
     .text(d => d.cites > 0 ? d.cites : '');
 
   // X axis
   svg.append('g').attr('transform', `translate(0,${iH})`)
     .call(d3.axisBottom(x).tickSize(0))
-    .selectAll('text').attr('font-size', '12px').attr('fill', 'oklch(55% 0.01 240)');
-  svg.select('.domain').attr('stroke', 'oklch(88% 0.01 240)');
+    .selectAll('text').attr('font-size', '12px').attr('fill', '#6b7280');
+  svg.select('.domain').attr('stroke', '#e2e8f0');
 
   // Y axis
   svg.append('g')
     .call(d3.axisLeft(y).ticks(4).tickFormat(d3.format('d')))
-    .selectAll('text').attr('font-size', '11px').attr('fill', 'oklch(55% 0.01 240)');
+    .selectAll('text').attr('font-size', '11px').attr('fill', '#6b7280');
   svg.select('.domain').remove();
 }
 
@@ -599,61 +598,53 @@ async function loadScholarData() {
     // Update metrics display
     if (data.metrics) {
       const m = data.metrics;
-      document.querySelectorAll('.metric-val')[0].textContent = m.citations.toLocaleString();
-      document.querySelectorAll('.metric-val')[1].textContent = m.hIndex;
-      document.querySelectorAll('.metric-val')[2].textContent = m.i10Index;
+      document.getElementById('metric-citations').textContent = m.citations.toLocaleString();
+      document.getElementById('metric-hindex').textContent = m.hIndex;
+      document.getElementById('metric-i10').textContent = m.i10Index;
       CV.metrics.citations = m.citations;
       CV.metrics.hIndex    = m.hIndex;
       CV.metrics.i10Index  = m.i10Index;
     }
 
-    // Update per-publication citation counts
     if (data.publications && data.publications.length) {
-      data.publications.forEach(sp => {
-        const match = CV.publications.find(p =>
-          p.title.toLowerCase().includes(sp.title.toLowerCase().slice(0, 40))
+      // Replace CV.publications entirely with enriched OpenAlex data
+      // but preserve manual fields (DOIs, keywords, coauthorIds) from CV where available
+      const enriched = data.publications.map(sp => {
+        // Try to find a matching manual entry to preserve extra fields
+        const manual = CV.publications.find(p =>
+          p.title.toLowerCase().includes((sp.title || '').toLowerCase().slice(0, 40)) ||
+          (sp.title || '').toLowerCase().includes((p.title || '').toLowerCase().slice(0, 40))
         );
-        if (match) {
-          match.citations = sp.citations || match.citations;
-          if (sp.doi)         match.doi       = 'https://doi.org/' + sp.doi;
-          if (sp.if_approx)   match.if_score  = sp.if_approx;
-          if (sp.cite_score)  match.cite_score = sp.cite_score;
-          if (sp.quartile)    match.quartile  = sp.quartile;
-          if (sp.open_access !== undefined) match.oa = sp.open_access;
-        }
+        return {
+          id:          manual?.id || 900 + Math.random(),
+          year:        parseInt(sp.year) || manual?.year || 0,
+          type:        manual?.type || 'journal',
+          pub_type:    sp.pub_type || 'peer-reviewed',
+          authors:     sp.authors || manual?.authors || '',
+          title:       sp.title || manual?.title || '',
+          journal:     sp.journal || manual?.journal || '',
+          volume:      sp.volume || manual?.volume || '',
+          citations:   sp.citations || 0,
+          oa:          sp.open_access || manual?.oa || false,
+          open_access: sp.open_access || false,
+          oa_url:      sp.oa_url || null,
+          doi:         sp.doi ? 'https://doi.org/' + sp.doi : manual?.doi || null,
+          if_score:    sp.if_approx || manual?.if_score || null,
+          cite_score:  sp.cite_score || null,
+          quartile:    sp.quartile || manual?.quartile || null,
+          keywords:    manual?.keywords || [],
+          coauthorIds: manual?.coauthorIds || [],
+        };
       });
-
-      // Detect new publications not in manual list
-      const newPubs = data.publications.filter(sp => {
-        return !CV.publications.some(p =>
-          p.title.toLowerCase().includes(sp.title.toLowerCase().slice(0, 40))
-        );
-      });
-      if (newPubs.length) {
-        newPubs.forEach(sp => {
-          CV.publications.push({
-            id: 900 + CV.publications.length,
-            year: parseInt(sp.year) || 0,
-            type: 'journal',
-            authors: sp.authors,
-            title: sp.title,
-            journal: sp.journal,
-            volume: sp.volume || '',
-            citations: sp.citations,
-            oa: false, quartile: null, if_score: null, doi: null,
-            keywords: [], coauthorIds: [],
-            _auto: true
-          });
-        });
-      }
+      CV.publications = enriched;
     }
 
     // Show last-updated badge
     if (data._meta && data._meta.updated) {
       const d = new Date(data._meta.updated);
       const label = d.toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' });
-      document.querySelectorAll('.metrics-source')[0].textContent =
-        `Source: Google Scholar · Auto-updated ${label}`;
+      const src = document.getElementById('metrics-source-line');
+      if (src) src.textContent = `Source: Google Scholar · Auto-updated ${label}`;
     }
 
     // Re-render publications with fresh data
@@ -661,6 +652,7 @@ async function loadScholarData() {
 
     // Re-run counts and chart with fresh data
     updateCounts();
+    updateFilterCounts();
     if (data.citations_by_year) {
       _citationsByYear = data.citations_by_year;
     }
@@ -708,8 +700,12 @@ function renderPublications(filter) {
   const list = document.getElementById('pub-list');
   let pubs = [...CV.publications];
 
-  if (filter === 'oa')  pubs = pubs.filter(p => p.oa);
-  if (filter === 'q1')  pubs = pubs.filter(p => p.quartile === 'Q1');
+  if (filter === 'oa')            pubs = pubs.filter(p => p.oa || p.open_access);
+  if (filter === 'q1')            pubs = pubs.filter(p => p.quartile === 'Q1');
+  if (filter === 'peer-reviewed') pubs = pubs.filter(p => !p.pub_type || p.pub_type === 'peer-reviewed');
+  if (filter === 'preprint')      pubs = pubs.filter(p => p.pub_type === 'preprint');
+  if (filter === 'dataset')       pubs = pubs.filter(p => p.pub_type === 'dataset');
+  if (filter === 'book-chapter')  pubs = pubs.filter(p => p.pub_type === 'book-chapter');
   if (['2025','2024','2023','2022'].includes(filter)) pubs = pubs.filter(p => p.year == filter);
 
   // Group by year
@@ -729,12 +725,13 @@ function renderPublications(filter) {
             <div class="pub-authors">${p.authors.replace('Siraji, M. A.','<strong>Siraji, M. A.</strong>').replace('Siraji, M.A.','<strong>Siraji, M.A.</strong>')}</div>
             <div class="pub-journal">${p.journal}${p.volume ? ', ' + p.volume : ''}</div>
             <div class="pub-tags">
-              ${p.oa ? '<span class="pub-tag oa">Open Access</span>' : ''}
+              ${p.pub_type === 'preprint' ? '<span class="pub-tag" style="background:#fff3e0;color:#e65100">Preprint</span>' : ''}
+              ${p.pub_type === 'dataset'  ? '<span class="pub-tag" style="background:#f3e5f5;color:#7b1fa2">Dataset</span>'  : ''}
+              ${p.oa || p.open_access ? '<span class="pub-tag oa">Open Access</span>' : ''}
               ${p.quartile ? `<span class="pub-tag q1">${p.quartile}</span>` : ''}
               ${p.if_score ? `<span class="pub-tag">IF: ${p.if_score}</span>` : ''}
               ${p.cite_score ? `<span class="pub-tag">CiteScore: ${p.cite_score}</span>` : ''}
               ${p.type === 'conference' ? '<span class="pub-tag conf">Conference</span>' : ''}
-              ${p._auto ? '<span class="pub-tag" style="background:#fff3e0;color:#e65100">Auto-detected</span>' : ''}
             </div>
           </div>
           <div class="pub-citations">
@@ -748,7 +745,32 @@ function renderPublications(filter) {
   if (pubs.length === 0) list.innerHTML = '<p style="padding:20px;color:var(--text-soft);text-align:center">No publications match this filter.</p>';
 }
 
+function updateFilterCounts() {
+  const all = CV.publications;
+  const counts = {
+    'all':           all.length,
+    'peer-reviewed': all.filter(p => !p.pub_type || p.pub_type === 'peer-reviewed').length,
+    'book-chapter':  all.filter(p => p.pub_type === 'book-chapter').length,
+    'preprint':      all.filter(p => p.pub_type === 'preprint').length,
+    'dataset':       all.filter(p => p.pub_type === 'dataset').length,
+    'oa':            all.filter(p => p.oa || p.open_access).length,
+    'q1':            all.filter(p => p.quartile === 'Q1').length,
+    '2025':          all.filter(p => p.year == 2025).length,
+    '2024':          all.filter(p => p.year == 2024).length,
+    '2023':          all.filter(p => p.year == 2023).length,
+    '2022':          all.filter(p => p.year == 2022).length,
+  };
+  document.querySelectorAll('.pub-filter').forEach(btn => {
+    const f = btn.dataset.filter;
+    const countEl = btn.querySelector('.filter-count');
+    if (countEl && counts[f] !== undefined) {
+      countEl.textContent = counts[f];
+    }
+  });
+}
+
 renderPublications('all');
+updateFilterCounts();
 
 document.querySelectorAll('.pub-filter').forEach(btn => {
   btn.addEventListener('click', () => {

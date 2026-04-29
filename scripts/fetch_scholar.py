@@ -59,7 +59,7 @@ def fetch_oa_works(orcid):
             f"https://api.openalex.org/works"
             f"?filter=author.orcid:{orcid}"
             f"&per-page={per_page}&page={page}"
-            f"&select=id,doi,title,publication_year,cited_by_count,"
+            f"&select=id,doi,title,type,publication_year,cited_by_count,"
             f"open_access,primary_location,authorships,best_oa_location,"
             f"counts_by_year"
         )
@@ -125,7 +125,7 @@ def get_source_metrics(source_id):
     if not data:
         _src_cache[source_id] = {}
         return {}
-    if2yr = round(data.get("2yr_mean_citedness") or 0, 3)
+    if2yr = round(data.get("summary_stats", {}).get("2yr_mean_citedness") or 0, 3)
     works  = max(data.get("works_count") or 1, 1)
     cites  = data.get("cited_by_count") or 0
     issn   = data.get("issn_l") or ((data.get("issn") or [None])[0])
@@ -172,6 +172,15 @@ def scimago_quartile(issn):
         return None
 
 # ── Step 6: Build enriched publication list ───────────────────────────────────
+def map_pub_type(oa_type):
+    """Map OpenAlex work type to site category."""
+    if oa_type == "dataset":     return "dataset"
+    if oa_type == "preprint":    return "preprint"
+    return "peer-reviewed"  # article, review, book-chapter, etc.
+
+def normalize_title(t):
+    return re.sub(r'[^a-z0-9]', '', (t or "").lower())[:50]
+
 def build_publications(oa_works):
     publications = []
     for w in oa_works:
@@ -181,19 +190,19 @@ def build_publications(oa_works):
         doi_raw = w.get("doi") or ""
         doi     = doi_raw.replace("https://doi.org/", "").strip() if doi_raw else None
 
-        oa_info = w.get("open_access") or {}
-        best    = w.get("best_oa_location") or {}
-        oa_url  = best.get("pdf_url") or best.get("landing_page_url")
+        oa_info  = w.get("open_access") or {}
+        best     = w.get("best_oa_location") or {}
+        oa_url   = best.get("pdf_url") or best.get("landing_page_url")
+        oa_type  = w.get("type", "article")
+        pub_type = map_pub_type(oa_type)
 
-        # Authors — mark Siraji
         auths = w.get("authorships") or []
-        author_names = []
-        for a in auths:
-            name = a.get("author", {}).get("display_name", "")
-            if name: author_names.append(name)
-        authors_str = ", ".join(author_names)
+        authors_str = ", ".join(
+            a.get("author", {}).get("display_name", "")
+            for a in auths
+            if a.get("author", {}).get("display_name")
+        )
 
-        # Journal metrics
         loc    = w.get("primary_location") or {}
         source = loc.get("source") or {}
         src_id = source.get("id")
@@ -215,14 +224,35 @@ def build_publications(oa_works):
             "quartile":     q or sm.get("quartile"),
             "issn":         issn,
             "publisher":    sm.get("publisher", ""),
+            "pub_type":     pub_type,
+            "oa_work_type": oa_type,
         }
         publications.append(pub)
 
-    publications.sort(key=lambda p: (
+    # Deduplicate: if a title exists as both peer-reviewed and preprint,
+    # keep only the peer-reviewed version
+    peer_titles = {normalize_title(p["title"])
+                   for p in publications if p["pub_type"] == "peer-reviewed"}
+    publications = [
+        p for p in publications
+        if not (p["pub_type"] == "preprint"
+                and normalize_title(p["title"]) in peer_titles)
+    ]
+
+    # Remove exact title duplicates (keep highest citations)
+    seen = {}
+    deduped = []
+    for p in sorted(publications, key=lambda x: -x["citations"]):
+        key = normalize_title(p["title"])
+        if key not in seen:
+            seen[key] = True
+            deduped.append(p)
+
+    deduped.sort(key=lambda p: (
         -(int(p["year"]) if p["year"].isdigit() else 0),
         -p["citations"]
     ))
-    return publications
+    return deduped
 
 # ── Step 7: Citations by year (from OpenAlex author profile) ──────────────────
 def build_citations_by_year(oa_author):
@@ -258,7 +288,7 @@ def main():
     # Fall back to OpenAlex if Scholar fails or returns wrong person
     oa_citations = (oa_author or {}).get("cited_by_count", 0)
     oa_hindex    = (oa_author or {}).get("summary_stats", {}).get("h_index", 0)
-    oa_i10       = sum(1 for w in oa_works if (w.get("cited_by_count") or 0) >= 10)
+    oa_i10       = (oa_author or {}).get("summary_stats", {}).get("i10_index", 0)
 
     if scholar_metrics:
         metrics = scholar_metrics

@@ -2,16 +2,16 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --blue:        oklch(40% 0.14 240);
-  --blue-mid:    oklch(52% 0.14 240);
-  --blue-light:  oklch(94% 0.04 240);
-  --blue-pale:   oklch(97% 0.02 240);
-  --text:        oklch(18% 0.01 240);
-  --text-mid:    oklch(38% 0.01 240);
-  --text-soft:   oklch(55% 0.01 240);
-  --border:      oklch(88% 0.01 240);
+  --blue:        #1a4a8a;
+  --blue-mid:    #2563b0;
+  --blue-light:  #dbeafe;
+  --blue-pale:   #eff6ff;
+  --text:        #1e2330;
+  --text-mid:    #4b5563;
+  --text-soft:   #6b7280;
+  --border:      #e2e8f0;
   --white:       #ffffff;
-  --bg:          oklch(98.5% 0.005 240);
+  --bg:          #f7f9fc;
   --radius:      6px;
   --shadow:      0 2px 12px rgba(0,40,100,.07);
   --shadow-lg:   0 4px 24px rgba(0,40,100,.10);
@@ -308,7 +308,10 @@ nav#main-nav button.active {
   transition: all .15s;
 }
 .pub-filter:hover { border-color: var(--blue-mid); color: var(--blue); }
-.pub-filter.active { background: var(--blue); color: white; border-color: var(--blue); }
+.filter-count {
+  font-size: 11px;
+}
+.pub-filter.active .filter-count { opacity: .85; }
 
 .pub-list { display: flex; flex-direction: column; gap: 0; }
 .pub-year-group { }
@@ -517,7 +520,7 @@ nav#main-nav button.active {
 .form-group input:focus, .form-group textarea:focus {
   outline: none;
   border-color: var(--blue-mid);
-  box-shadow: 0 0 0 3px oklch(94% 0.06 240);
+  box-shadow: 0 0 0 3px #dbeafe;
 }
 .btn-submit {
   background: var(--blue);
@@ -535,7 +538,7 @@ nav#main-nav button.active {
 
 /* ── Footer ──────────────────────────────────────── */
 footer {
-  background: oklch(22% 0.04 240);
+  background: #172033;
   color: rgba(255,255,255,.6);
   text-align: center;
   padding: 20px;
@@ -546,21 +549,21 @@ footer a:hover { color: white; }
 
 /* ── Dark Mode ───────────────────────────────────── */
 body.dark {
-  --blue:        oklch(62% 0.14 240);
-  --blue-mid:    oklch(70% 0.12 240);
-  --blue-light:  oklch(28% 0.06 240);
-  --blue-pale:   oklch(22% 0.04 240);
-  --text:        oklch(92% 0.01 240);
-  --text-mid:    oklch(72% 0.01 240);
-  --text-soft:   oklch(55% 0.01 240);
-  --border:      oklch(28% 0.02 240);
-  --white:       oklch(16% 0.02 240);
-  --bg:          oklch(12% 0.02 240);
+  --blue:        #4a90d9;
+  --blue-mid:    #60a5fa;
+  --blue-light:  #1e3a5f;
+  --blue-pale:   #172033;
+  --text:        #e8ecf0;
+  --text-mid:    #a0aec0;
+  --text-soft:   #718096;
+  --border:      #2d3748;
+  --white:       #1a202c;
+  --bg:          #0f1318;
 }
-body.dark #topbar          { background: oklch(14% 0.06 240); }
-body.dark #site-header     { background: oklch(16% 0.02 240); }
-body.dark #hero            { background: oklch(16% 0.02 240); }
-body.dark .metrics-box     { background: oklch(20% 0.03 240); }
+body.dark #topbar          { background: #0d1829; }
+body.dark #site-header     { background: #1a202c; }
+body.dark #hero            { background: #1a202c; }
+body.dark .metrics-box     { background: #1f2940; }
 body.dark .pub-tag.oa      { background: #1b3a1c; color: #6fcf7a; }
 body.dark .pub-tag.q1      { background: #0d2340; color: #64b0f4; }
 body.dark .pub-tag.conf    { background: #2e2000; color: #f9c74f; }
