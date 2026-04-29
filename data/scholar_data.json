@@ -12,6 +12,12 @@
     "hIndex5":    5,
     "i10Index5":  4
   },
+  "citations_by_year": {
+    "2022": 12,
+    "2023": 98,
+    "2024": 72,
+    "2025": 28
+  },
   "publications": [
     { "title": "Light exposure behaviors predict mood, memory and sleep quality",                                                                                     "year": "2023", "journal": "Scientific Reports",                              "authors": "Mushfiqul Anwar Siraji, Manuel Spitschan, Vineetha Kalavally, Shamsul Haque",                                                                             "citations": 66 },
     { "title": "Effects of daytime electric light exposure on human alertness and higher cognitive functions: A systematic review",                                    "year": "2022", "journal": "Frontiers in Psychology",                         "authors": "Mushfiqul Anwar Siraji, Vineetha Kalavally, Alexander Schaefer, Shamsul Haque",                                                                          "citations": 74 },

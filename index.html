@@ -65,9 +65,9 @@
           <svg viewBox="0 0 24 24" fill="currentColor" style="width:13px;height:13px"><circle cx="12" cy="12" r="10"/></svg>
           Scopus
         </a>
-        <a class="ext-link" href="/cdn-cgi/l/email-protection#ee839b9d8688879f9b82c09d879c8f8487ae80819c9a869d819b9a86c08b8a9b">
+        <a class="ext-link" href="mailto:mushfiqul.siraji@northsouth.edu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-          <span class="__cf_email__" data-cfemail="6f021a1c0709061e1a03411c061d0e05062f01001d1b071c001a1b07410a0b1a">[email&#160;protected]</span>
+          mushfiqul.siraji@northsouth.edu
         </a>
         <a class="ext-link" href="cv/Mushfiqul_Anwar_Siraji_CV.docx" download style="color:var(--blue);font-weight:600">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:13px;height:13px"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -197,10 +197,16 @@
       </div>
     </div>
 
+    <!-- Citations per year chart -->
+    <div class="card" style="margin-top:24px">
+      <h3>Citations per Year <span class="count" id="count-citations-total"></span></h3>
+      <div id="citations-chart" style="width:100%;height:180px;position:relative"></div>
+    </div>
+
     <div class="section-grid" style="margin-top:24px">
       <!-- Grants -->
       <div class="card">
-        <h3>Research Grants &amp; Funding <span class="count">3</span></h3>
+        <h3>Research Grants &amp; Funding <span class="count" id="count-grants"></span></h3>
         <div class="grant-list">
           <div class="grant-item">
             <div class="grant-title">Unraveling the Compound Effect of Climate Change on Mental Health in Bangladeshi Community: A Comprehensive Study Using PLS-SEM</div>
@@ -229,7 +235,7 @@
 
       <!-- Awards -->
       <div class="card">
-        <h3>Awards &amp; Honours <span class="count">5</span></h3>
+        <h3>Awards &amp; Honours <span class="count" id="count-awards"></span></h3>
         <div class="award-list">
           <div class="award-item">
             <div class="award-year">2022</div>
@@ -271,7 +277,7 @@
 
       <!-- Activities -->
       <div class="card" style="grid-column:1/-1">
-        <h3>Professional Activities <span class="count">5</span></h3>
+        <h3>Professional Activities <span class="count" id="count-activities"></span></h3>
         <div class="activity-list">
           <div class="activity-item" style="align-items:start">
             <div style="flex:1">
@@ -298,7 +304,7 @@
   <!-- ══ PUBLICATIONS ═══════════════════════════════════════ -->
   <section id="tab-publications" class="tab-section">
     <div class="card" style="margin-top:0">
-      <h3>Research Output <span class="count">13 publications</span></h3>
+      <h3>Research Output <span class="count" id="count-pubs"></span></h3>
       <div class="pub-filters">
         <button class="pub-filter active" data-filter="all">All</button>
         <button class="pub-filter" data-filter="2025">2025</button>
@@ -414,7 +420,7 @@
         <p>I welcome inquiries about research collaborations, PhD supervision, and reproducible research training. For consultancy or media requests, please reach out by email.</p>
         <div class="contact-detail">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-          <a href="/cdn-cgi/l/email-protection#a0cdd5d3c8c6c9d1d5cc8ed3c9d2c1cac9e0cecfd2d4c8d3cfd5d4c88ec5c4d5"><span class="__cf_email__" data-cfemail="e38e96908b858a92968fcd908a9182898aa38d8c91978b908c96978bcd868796">[email&#160;protected]</span></a>
+          <a href="mailto:mushfiqul.siraji@northsouth.edu">mushfiqul.siraji@northsouth.edu</a>
         </div>
         <div class="contact-detail">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -440,11 +446,11 @@
   <p>© 2026 Mushfiqul Anwar Siraji · North South University, Bangladesh ·
   <a href="https://orcid.org/0000-0003-0127-9982" target="_blank">ORCID</a> ·
   <a href="https://scholar.google.com/citations?user=udy6g1kAAAAJ&hl=en" target="_blank">Google Scholar</a></p>
-  <p style="margin-top:4px;opacity:.5">Hosted free on GitHub Pages · Last updated April 2026</p>
+  <p style="margin-top:4px;opacity:.5">masiraji.com · Hosted on GitHub Pages · Last updated April 2026</p>
 </footer>
 
 <!-- Scripts -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/data.js"></script>
+<script src="js/data.js"></script>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://unpkg.com/topojson-client@3/dist/topojson-client.min.js"></script>
 <script src="js/network.js"></script>
@@ -461,6 +467,127 @@ if (localStorage.getItem('darkMode') === '1') {
   document.body.classList.add('dark');
   document.getElementById('dark-icon').textContent = '☀️';
 }
+
+// ── Auto-compute section counts ─────────────────
+function updateCounts() {
+  // Grants: count .grant-item elements
+  const grants = document.querySelectorAll('.grant-item').length;
+  const el_g = document.getElementById('count-grants');
+  if (el_g) el_g.textContent = grants;
+
+  // Awards: count .award-item elements
+  const awards = document.querySelectorAll('.award-item').length;
+  const el_a = document.getElementById('count-awards');
+  if (el_a) el_a.textContent = awards;
+
+  // Activities: count .activity-item elements
+  const acts = document.querySelectorAll('.activity-item').length;
+  const el_ac = document.getElementById('count-activities');
+  if (el_ac) el_ac.textContent = acts;
+
+  // Publications: from CV data
+  const el_p = document.getElementById('count-pubs');
+  if (el_p) el_p.textContent = CV.publications.length + ' publications';
+
+  // Nav tab publication count
+  document.querySelectorAll('nav#main-nav button').forEach(b => {
+    if (b.dataset.tab === 'publications') {
+      b.innerHTML = `Publications <span style="font-size:11px;opacity:.6">(${CV.publications.length})</span>`;
+    }
+  });
+
+  // Total citations badge
+  const totalCites = CV.publications.reduce((s, p) => s + (p.citations || 0), 0);
+  const el_c = document.getElementById('count-citations-total');
+  if (el_c) el_c.textContent = totalCites + ' total';
+}
+updateCounts();
+
+// ── Citations per year bar chart ─────────────────
+function renderCitationsChart(citationsByYear) {
+  const container = document.getElementById('citations-chart');
+  if (!container || typeof d3 === 'undefined') return;
+
+  const currentYear = new Date().getFullYear();
+  const years = [];
+  for (let y = 2022; y <= currentYear; y++) years.push(y);
+
+  let data;
+  if (citationsByYear && Object.keys(citationsByYear).length) {
+    // Use real OpenAlex per-year citation data
+    data = years.map(y => ({ year: y, cites: citationsByYear[String(y)] || 0 }));
+  } else {
+    // Fallback: aggregate from pub citation counts by pub year
+    const yearCites = {};
+    CV.publications.forEach(p => {
+      const yr = parseInt(p.year);
+      if (yr >= 2022) yearCites[yr] = (yearCites[yr] || 0) + (p.citations || 0);
+    });
+    data = years.map(y => ({ year: y, cites: yearCites[y] || 0 }));
+  }
+
+  const W = container.clientWidth || 700;
+  const H = 160;
+  const margin = { top: 16, right: 16, bottom: 28, left: 40 };
+  const iW = W - margin.left - margin.right;
+  const iH = H - margin.top - margin.bottom;
+
+  container.innerHTML = '';
+  const svg = d3.select(container).append('svg')
+    .attr('width', W).attr('height', H)
+    .append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  const x = d3.scaleBand().domain(years.map(String)).range([0, iW]).padding(0.35);
+  const maxVal = Math.max(...data.map(d => d.cites), 1);
+  const y = d3.scaleLinear().domain([0, maxVal * 1.15]).range([iH, 0]);
+
+  // Gridlines
+  svg.append('g').attr('class', 'grid')
+    .call(d3.axisLeft(y).ticks(4).tickSize(-iW).tickFormat(''))
+    .selectAll('line').attr('stroke', 'rgba(100,140,200,.1)').attr('stroke-dasharray', '3,3');
+  svg.select('.grid .domain').remove();
+
+  // Bars
+  svg.selectAll('.bar').data(data).join('rect')
+    .attr('class', 'bar')
+    .attr('x', d => x(String(d.year)))
+    .attr('y', d => y(d.cites))
+    .attr('width', x.bandwidth())
+    .attr('height', d => iH - y(d.cites))
+    .attr('fill', 'oklch(44% 0.13 240)')
+    .attr('rx', 3)
+    .attr('opacity', 0.85);
+
+  // Value labels
+  svg.selectAll('.bar-label').data(data).join('text')
+    .attr('x', d => x(String(d.year)) + x.bandwidth() / 2)
+    .attr('y', d => y(d.cites) - 5)
+    .attr('text-anchor', 'middle')
+    .attr('font-size', '12px')
+    .attr('font-family', 'Inter, sans-serif')
+    .attr('fill', 'oklch(38% 0.01 240)')
+    .attr('font-weight', '600')
+    .text(d => d.cites > 0 ? d.cites : '');
+
+  // X axis
+  svg.append('g').attr('transform', `translate(0,${iH})`)
+    .call(d3.axisBottom(x).tickSize(0))
+    .selectAll('text').attr('font-size', '12px').attr('fill', 'oklch(55% 0.01 240)');
+  svg.select('.domain').attr('stroke', 'oklch(88% 0.01 240)');
+
+  // Y axis
+  svg.append('g')
+    .call(d3.axisLeft(y).ticks(4).tickFormat(d3.format('d')))
+    .selectAll('text').attr('font-size', '11px').attr('fill', 'oklch(55% 0.01 240)');
+  svg.select('.domain').remove();
+}
+
+// Run chart after D3 is ready (will be called again with real data after Scholar fetch)
+let _citationsByYear = null;
+(function waitForD3() {
+  if (typeof d3 !== 'undefined') renderCitationsChart(_citationsByYear);
+  else setTimeout(waitForD3, 100);
+})();
 
 // ── Load & merge Google Scholar data ────────────
 async function loadScholarData() {
@@ -531,6 +658,13 @@ async function loadScholarData() {
 
     // Re-render publications with fresh data
     renderPublications(document.querySelector('.pub-filter.active')?.dataset.filter || 'all');
+
+    // Re-run counts and chart with fresh data
+    updateCounts();
+    if (data.citations_by_year) {
+      _citationsByYear = data.citations_by_year;
+    }
+    renderCitationsChart(_citationsByYear);
 
   } catch(e) {
     console.warn('Scholar data fetch failed (expected in local dev):', e.message);
