@@ -299,7 +299,7 @@
   <!-- ══ PUBLICATIONS ═══════════════════════════════════════ -->
   <section id="tab-publications" class="tab-section">
     <div class="card" style="margin-top:0">
-      <h3>Research Output <span class="count" id="count-pubs"></span></h3>
+      <h3>Research Output</h3>
       <div class="pub-filters" id="pub-filters">
         <button class="pub-filter" data-filter="peer-reviewed">Peer-reviewed (<span class="filter-count"></span>)</button>
         <button class="pub-filter" data-filter="book-chapter">Books &amp; Chapters (<span class="filter-count"></span>)</button>
@@ -480,9 +480,6 @@ function updateCounts() {
   const el_ac = document.getElementById('count-activities');
   if (el_ac) el_ac.textContent = acts;
 
-  // Publications: from CV data
-  const el_p = document.getElementById('count-pubs');
-  if (el_p) el_p.textContent = CV.publications.length + ' publications';
 
   // Nav tab publication count
   document.querySelectorAll('nav#main-nav button').forEach(b => {
@@ -730,9 +727,6 @@ function renderPublications(filter) {
               ${p.cite_score ? `<span class="pub-tag">CiteScore: ${p.cite_score}</span>` : ''}
               ${p.type === 'conference' ? '<span class="pub-tag conf">Conference</span>' : ''}
             </div>
-          </div>
-          <div class="pub-citations">
-            <strong>${p.citations}</strong> <span style="font-size:11px">cite${p.citations===1?'':'s'}</span>
           </div>
         </div>
       `).join('')}
