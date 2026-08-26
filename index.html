@@ -624,7 +624,6 @@ async function loadScholarData() {
           oa_url:      sp.oa_url || null,
           doi:         sp.doi ? 'https://doi.org/' + sp.doi : manual?.doi || null,
           if_score:    sp.if_approx || manual?.if_score || null,
-          cite_score:  sp.cite_score || null,
           quartile:    sp.quartile || manual?.quartile || null,
           note:        manual?.note || null,
           keywords:    manual?.keywords || [],
@@ -726,7 +725,6 @@ function renderPublications(filter) {
               ${p.oa || p.open_access ? '<span class="pub-tag oa">Open Access</span>' : ''}
               ${p.quartile ? `<span class="pub-tag q1">${p.quartile}</span>` : ''}
               ${p.if_score ? `<span class="pub-tag">IF: ${p.if_score}</span>` : ''}
-              ${p.cite_score ? `<span class="pub-tag">CiteScore: ${p.cite_score}</span>` : ''}
               ${p.type === 'conference' ? '<span class="pub-tag conf">Conference</span>' : ''}
             </div>
           </div>

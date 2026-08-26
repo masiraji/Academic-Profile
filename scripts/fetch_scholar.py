@@ -127,11 +127,9 @@ def get_source_metrics(source_id):
         return {}
     if2yr = round(data.get("summary_stats", {}).get("2yr_mean_citedness") or 0, 3)
     works  = max(data.get("works_count") or 1, 1)
-    cites  = data.get("cited_by_count") or 0
     issn   = data.get("issn_l") or ((data.get("issn") or [None])[0])
     result = {
         "if_approx":  if2yr if if2yr > 0 else None,
-        "cite_score": round(cites / works * 2, 2) if cites else None,
         "issn":       issn,
         "publisher":  data.get("host_organization_name", ""),
         "is_oa":      data.get("is_oa", False),
@@ -220,7 +218,6 @@ def build_publications(oa_works):
             "open_access":  oa_info.get("is_oa", False),
             "oa_url":       oa_url,
             "if_approx":    sm.get("if_approx"),
-            "cite_score":   sm.get("cite_score"),
             "quartile":     q or sm.get("quartile"),
             "issn":         issn,
             "publisher":    sm.get("publisher", ""),
