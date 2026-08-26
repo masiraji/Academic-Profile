@@ -78,11 +78,11 @@
     <div class="metrics-box">
       <h4>Research Metrics</h4>
       <div class="metric-item">
-        <span class="metric-val" id="metric-citations">224</span>
+        <span class="metric-val" id="metric-citations">272</span>
         <span class="metric-lbl">Total Citations</span>
       </div>
       <div class="metric-item">
-        <span class="metric-val" id="metric-hindex">5</span>
+        <span class="metric-val" id="metric-hindex">7</span>
         <span class="metric-lbl">h-index</span>
       </div>
       <div class="metric-item">
@@ -441,7 +441,7 @@
   <p>© 2026 Mushfiqul Anwar Siraji · North South University, Bangladesh ·
   <a href="https://orcid.org/0000-0003-0127-9982" target="_blank">ORCID</a> ·
   <a href="https://scholar.google.com/citations?user=udy6g1kAAAAJ&amp;hl=en" target="_blank">Google Scholar</a></p>
-  <p style="margin-top:4px;opacity:.5">masiraji.com · Hosted on GitHub Pages · Last updated April 2026</p>
+  <p style="margin-top:4px;opacity:.5">masiraji.com · Hosted on GitHub Pages · Last updated August 2026</p>
 </footer>
 
 <!-- Scripts -->
@@ -626,6 +626,7 @@ async function loadScholarData() {
           if_score:    sp.if_approx || manual?.if_score || null,
           cite_score:  sp.cite_score || null,
           quartile:    sp.quartile || manual?.quartile || null,
+          note:        manual?.note || null,
           keywords:    manual?.keywords || [],
           coauthorIds: manual?.coauthorIds || [],
         };
@@ -718,6 +719,7 @@ function renderPublications(filter) {
             </div>
             <div class="pub-authors">${p.authors.replace('Siraji, M. A.','<strong>Siraji, M. A.</strong>').replace('Siraji, M.A.','<strong>Siraji, M.A.</strong>')}</div>
             <div class="pub-journal">${p.journal}${p.volume ? ', ' + p.volume : ''}</div>
+            ${p.note ? `<div class="pub-note">${p.note}</div>` : ''}
             <div class="pub-tags">
               ${p.pub_type === 'preprint' ? '<span class="pub-tag" style="background:#fff3e0;color:#e65100">Preprint</span>' : ''}
               ${p.pub_type === 'dataset'  ? '<span class="pub-tag" style="background:#f3e5f5;color:#7b1fa2">Dataset</span>'  : ''}

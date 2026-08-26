@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "updated": "2026-04-29T18:09:13.793Z",
+    "updated": "2026-08-26T00:00:00.000Z",
     "scholar_id": "udy6g1kAAAAJ",
     "orcid": "0000-0003-0127-9982",
     "sources": [
@@ -10,13 +10,13 @@
     ]
   },
   "metrics": {
-    "citations": 224,
-    "hIndex": 5,
+    "citations": 272,
+    "hIndex": 7,
     "i10Index": 5,
     "citations5": 0,
     "hIndex5": 0,
     "i10Index5": 0,
-    "note": "Source: Google Scholar. Last manually updated: 2026-04-30."
+    "note": "Source: Google Scholar. Last manually updated: 2026-08-26."
   },
   "citations_by_year": {
     "2022": 62,

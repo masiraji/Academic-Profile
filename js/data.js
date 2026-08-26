@@ -126,6 +126,7 @@ const CV = {
       title: "Light exposure behaviors predict mood, memory and sleep quality",
       journal: "Scientific Reports", volume: "13(1), 12425",
       if_score: "3.9", quartile: "Q1", citations: 66, oa: true,
+      note: "Ranked 46th among approximately 2,350 psychology papers published in Scientific Reports in 2023, placing the article among the year\u2019s top 2% by downloads.",
       doi: "https://doi.org/10.1038/s41598-023-39636-y",
       keywords: ["light exposure","mood","memory","sleep quality","behaviour"],
       coauthorIds: ["Spitschan M.", "Kalavally V.", "Haque S."]
