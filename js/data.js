@@ -11,7 +11,7 @@ const CV = {
     scholar: "https://scholar.google.com/citations?user=udy6g1kAAAAJ&hl=en",
     github: "https://github.com/mushfiqulAnwar"
   },
-  metrics: { citations: 210, hIndex: 5, i10Index: 4, source: "Google Scholar, March 2026" },
+  metrics: { citations: 310, hIndex: 7, i10Index: 5, source: "Google Scholar, November 2026" },
   bio: "Mushfiqul Anwar Siraji is an Assistant Professor of Psychology at North South University, Bangladesh. His research sits at the intersection of environmental psychology, cognitive neuroscience, and psychometrics. He investigates how light — particularly its non-visual, non-image-forming effects — shapes cognition, alertness, mood, and sleep across populations. Alongside this, he develops and validates psychological instruments for underrepresented linguistic communities, with a focus on rigorous, reproducible methodology. He earned his PhD from Monash University Malaysia under Prof. Shamsul Haque, and has collaborated with researchers at Harvard Medical School, the Technical University of Munich, and Eindhoven University.",
   research_interests: [
     "Non-visual effects of light on cognition, alertness & sleep",

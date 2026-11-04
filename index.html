@@ -31,6 +31,7 @@
       <button data-tab="network">Co-author Network</button>
       <button data-tab="collaborations">Global Collaborations</button>
       <button data-tab="contact">Contact</button>
+      <a href="lab.html" style="padding:18px 16px;font:13px/1 var(--font-sans);color:var(--blue);font-weight:600;text-decoration:none;border-bottom:3px solid transparent;white-space:nowrap">Lab</a>
     </nav>
     <button id="dark-toggle" onclick="toggleDark()" aria-label="Toggle dark mode">
       <span id="dark-icon">🌙</span>
@@ -50,6 +51,7 @@
       </div>
       <div class="hero-badges">
         <span class="badge phd">PhD · Monash University Malaysia (2023)</span>
+        <a class="badge" href="lab.html" style="text-decoration:none">Lumen and Self Lab →</a>
         <span class="badge">Accepting Collaborators</span>
       </div>
       <div class="hero-links">
@@ -78,19 +80,18 @@
     <div class="metrics-box">
       <h4>Research Metrics</h4>
       <div class="metric-item">
-        <span class="metric-val" id="metric-citations">272</span>
-        <span class="metric-lbl">Total Citations</span>
+        <span class="metric-val" id="metric-citations">310</span>
+        <span class="metric-lbl">Total Citations <span style="opacity:.7">· <span id="metric-citations5">309</span> since 2021</span></span>
       </div>
       <div class="metric-item">
         <span class="metric-val" id="metric-hindex">7</span>
-        <span class="metric-lbl">h-index</span>
+        <span class="metric-lbl">h-index <span style="opacity:.7">· <span id="metric-hindex5">7</span> since 2021</span></span>
       </div>
       <div class="metric-item">
         <span class="metric-val" id="metric-i10">5</span>
-        <span class="metric-lbl">i10-index</span>
+        <span class="metric-lbl">i10-index <span style="opacity:.7">· <span id="metric-i105">5</span> since 2021</span></span>
       </div>
-      <div class="metrics-source" id="metrics-source-line">Source: Google Scholar · Updated manually</div>
-      <div style="font-size:10px;color:var(--text-soft);margin-top:2px;line-height:1.4">Auto-updates daily via GitHub Action</div>
+      <div class="metrics-source" id="metrics-source-line">Source: Google Scholar · Updated 4 Nov 2026</div>
     </div>
   </div>
 </section>
@@ -201,7 +202,7 @@
     <div class="section-grid" style="margin-top:24px">
       <!-- Grants -->
       <div class="card">
-        <h3>Research Grants &amp; Funding <span class="count" id="count-grants"></span></h3>
+        <h3>Research Grants &amp; Funding</h3>
         <div class="grant-list">
           <div class="grant-item">
             <div class="grant-title">Unraveling the Compound Effect of Climate Change on Mental Health in Bangladeshi Community: A Comprehensive Study Using PLS-SEM</div>
@@ -230,7 +231,7 @@
 
       <!-- Awards -->
       <div class="card">
-        <h3>Awards &amp; Honours <span class="count" id="count-awards"></span></h3>
+        <h3>Awards &amp; Honours</h3>
         <div class="award-list">
           <div class="award-item">
             <div class="award-year">2022</div>
@@ -272,7 +273,7 @@
 
       <!-- Activities -->
       <div class="card" style="grid-column:1/-1">
-        <h3>Professional Activities <span class="count" id="count-activities"></span></h3>
+        <h3>Professional Activities</h3>
         <div class="activity-list">
           <div class="activity-item" style="align-items:start">
             <div style="flex:1">
@@ -441,7 +442,7 @@
   <p>© 2026 Mushfiqul Anwar Siraji · North South University, Bangladesh ·
   <a href="https://orcid.org/0000-0003-0127-9982" target="_blank">ORCID</a> ·
   <a href="https://scholar.google.com/citations?user=udy6g1kAAAAJ&amp;hl=en" target="_blank">Google Scholar</a></p>
-  <p style="margin-top:4px;opacity:.5">masiraji.com · Hosted on GitHub Pages · Last updated August 2026</p>
+  <p style="margin-top:4px;opacity:.5">masiraji.com · Hosted on GitHub Pages · Last updated November 2026</p>
 </footer>
 
 <!-- Scripts -->
@@ -595,6 +596,9 @@ async function loadScholarData() {
       document.getElementById('metric-citations').textContent = m.citations.toLocaleString();
       document.getElementById('metric-hindex').textContent = m.hIndex;
       document.getElementById('metric-i10').textContent = m.i10Index;
+      if (m.citations5) document.getElementById('metric-citations5').textContent = m.citations5.toLocaleString();
+      if (m.hIndex5) document.getElementById('metric-hindex5').textContent = m.hIndex5;
+      if (m.i10Index5) document.getElementById('metric-i105').textContent = m.i10Index5;
       CV.metrics.citations = m.citations;
       CV.metrics.hIndex    = m.hIndex;
       CV.metrics.i10Index  = m.i10Index;
@@ -638,7 +642,7 @@ async function loadScholarData() {
       const d = new Date(data._meta.updated);
       const label = d.toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' });
       const src = document.getElementById('metrics-source-line');
-      if (src) src.textContent = `Source: Google Scholar · Auto-updated ${label}`;
+      if (src) src.textContent = `Source: Google Scholar · Updated ${label}`;
     }
 
     // Re-render publications with fresh data

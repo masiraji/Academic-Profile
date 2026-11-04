@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lab Members</title>
+<meta name="description" content="Members of the Lumen and Self Lab, North South University, by research theme.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#1a4a8a;--ink:#1e2330;--mid:#4b5563;--soft:#5b6472;--line:#e2e8f0;--bg:#f7f9fc;--shadow:0 2px 12px rgba(0,40,100,.07);--serif:'Source Serif 4',Georgia,serif}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.6}
+a{color:var(--blue)}a:hover{color:#2563b0}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+.topbar{background:var(--blue);color:#fff;font-size:12px;letter-spacing:.04em;padding:6px 24px}
+header{background:#fff;border-bottom:1px solid var(--line);box-shadow:var(--shadow);position:sticky;top:0;z-index:10}
+.hdr{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;min-height:56px}
+.logo{font-weight:700;font-size:15px;color:var(--blue)}.logo span{color:var(--mid);font-weight:400}
+nav{display:flex;flex-wrap:wrap;gap:4px}
+nav a{padding:18px 14px;font-size:13px;color:var(--mid);text-decoration:none;border-bottom:3px solid transparent}
+nav a.on{color:var(--blue);font-weight:600;border-bottom-color:var(--blue)}
+.hero{background:#fff;border-bottom:1px solid var(--line);padding:48px 0 40px}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8a5a12;font-weight:600;margin-bottom:10px}
+h1{font-family:var(--serif);font-size:44px;font-weight:600;line-height:1.15;margin:0 0 10px}
+.tag{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--mid);margin:0 0 22px}
+.pill{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:22px;border:1px solid var(--b);background:var(--p);color:var(--t);font-size:13px;font-weight:500;text-decoration:none}
+main{max-width:1100px;margin:0 auto;padding:32px 24px 64px;display:flex;flex-direction:column;gap:40px}
+.card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:24px;box-shadow:var(--shadow)}
+.theme{display:flex;flex-direction:column;gap:16px;scroll-margin-top:72px}
+.theme-head{border-bottom:2px solid var(--c);padding-bottom:10px}
+.theme-head h3{font-family:var(--serif);font-size:24px;font-weight:600;margin:0}
+.theme-head p{margin:2px 0 0;font-size:13px;color:var(--soft)}
+.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.person{background:#fff;border:1px solid var(--line);border-radius:6px;padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px}
+.ph{width:112px;height:112px;border-radius:50%;background:var(--p);border:2px dashed var(--b);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--t);margin-bottom:10px}
+.role{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--t)}
+.name{font-size:16px;font-weight:600}
+.aff{font-size:13px;color:var(--soft)}
+.focus{font-size:13px;color:var(--mid);line-height:1.5;margin-top:4px}
+.light{--c:#b7791f;--t:#7a4f10;--p:#fdf6e7;--b:#d9b56e}
+.psy{--c:#1a4a8a;--t:#1a4a8a;--p:#eaf1fb;--b:#9bb7df}
+.clim{--c:#2f7d4f;--t:#24603d;--p:#e9f5ee;--b:#8cc7a3}
+.pers{--c:#6b46a3;--t:#5b3a8c;--p:#f2edf9;--b:#b9a2dd}
+main img{pointer-events:none;-webkit-user-drag:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.person,main .card{-webkit-touch-callout:none;user-select:none;-webkit-user-select:none}
+@media print{main img{visibility:hidden}}
+footer{background:#172033;color:rgba(255,255,255,.75);text-align:center;padding:20px;font-size:12px}
+footer a{color:rgba(255,255,255,.85)}
+@media (max-width:640px){h1{font-size:34px}.wrap,main{padding-left:16px;padding-right:16px}}
+</style>
+</head>
+<body>
+
+<div class="topbar">North South University · Department of History &amp; Philosophy · Bangladesh</div>
+
+<header>
+<div class="wrap hdr">
+<div class="logo">Lumen and Self Lab <span>/ NSU</span></div>
+<nav>
+<a href="index.html">Academic Profile</a>
+<a href="lab.html">The Lab</a>
+<a href="members.html" class="on">Members</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="wrap">
+<div class="eyebrow">Lumen and Self Lab</div>
+<h1>Our Team</h1>
+<p class="tag">The people behind our four research themes.</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<a class="pill" href="#light" style="--b:#e2c48a;--p:#fdf6e7;--t:#7a4f10">Non-visual Effects of Light</a>
+<a class="pill" href="#psychometrics" style="--b:#b9cde9;--p:#eaf1fb;--t:#1a4a8a">Psychometrics</a>
+<a class="pill" href="#climate" style="--b:#b3dbc3;--p:#e9f5ee;--t:#24603d">Climate Change and Mental Health</a>
+<a class="pill" href="#personality" style="--b:#d3c4ec;--p:#f2edf9;--t:#5b3a8c">Personality</a>
+</div>
+</div>
+</section>
+
+<main>
+
+<div class="card">
+<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:16px">Lab Lead</div>
+<div style="display:flex;flex-wrap:wrap;gap:24px;align-items:center">
+<img src="uploads/photo-1776695416689.jpeg" alt="Dr Mushfiqul Anwar Siraji" style="width:132px;height:132px;border-radius:6px;object-fit:cover;object-position:top;border:1px solid var(--line)">
+<div style="flex:1 1 320px;display:flex;flex-direction:column;gap:4px">
+<h2 style="font-family:var(--serif);font-size:24px;font-weight:600;margin:0">Dr Mushfiqul Anwar Siraji</h2>
+<div style="font-size:13px;color:var(--soft)">Assistant Professor of Psychology, North South University</div>
+<p style="margin:6px 0 0;font-size:14px;color:var(--mid);line-height:1.6">PhD (Monash University). Works across all four themes, with a focus on the non-visual effects of light, psychometrics in Bangla-language contexts and reproducible research methods.</p>
+<div style="display:flex;gap:16px;font-size:13px;margin-top:6px"><a href="mailto:mushfiqul.siraji@northsouth.edu">Email</a><a href="https://orcid.org/0000-0003-0127-9982" target="_blank">ORCID</a><a href="index.html">Profile</a></div>
+</div>
+</div>
+</div>
+
+<section id="light" class="theme light">
+<div class="theme-head"><h3>Non-visual Effects of Light</h3><p>Circadian rhythms, sleep, alertness, cognition and light exposure behaviour.</p></div>
+<p style="margin:0;font-size:14px;color:var(--soft)">Members to be announced. Interested? <a href="lab.html#join">See how to join</a>.</p>
+</section>
+
+<section id="psychometrics" class="theme psy">
+<div class="theme-head"><h3>Psychometrics</h3><p>Adapting and validating instruments in Bangla and across cultures.</p></div>
+<div class="people">
+<div class="person"><img src="uploads/nowshin-tabassum.jpg" alt="Nowshin Tabassum" style="width:112px;height:112px;border-radius:50%;object-fit:cover;object-position:center 20%;border:2px solid var(--b);margin-bottom:10px"><div class="role">Research Assistant</div><div class="name">Nowshin Tabassum</div><div class="aff">School of Business and Economics, North South University</div><div class="focus">Focuses on cultural adaptation and validation of measures of career and workplace experiences in Bangladesh.</div></div>
+<div class="person"><img src="uploads/sumaiya-alam-shreyoshi.jpg" alt="Sumaiya Alam Shreyoshi" style="width:112px;height:112px;border-radius:50%;object-fit:cover;object-position:center 30%;border:2px solid var(--b);margin-bottom:10px"><div class="role">Research Assistant</div><div class="name">Sumaiya Alam Shreyoshi</div><div class="aff">School of Business and Economics, North South University</div><div class="focus">Focuses on Bangla psychological measurement of cognitive load, somatic symptoms, and social connectedness.</div></div>
+<div class="person"><img src="uploads/mahirul-tasmin-arshi.jpg" alt="Mahirul Tasmin Arshi" style="width:112px;height:112px;border-radius:50%;object-fit:cover;object-position:center 30%;border:2px solid var(--b);margin-bottom:10px"><div class="name">Mahirul Tasmin Arshi</div><div class="aff">School of Business and Economics, North South University</div><div class="focus">Focuses on Bangla psychological measurement of career adaptability, team psychological safety, and job satisfaction.</div></div>
+<div class="person"><img src="uploads/nishat-tasnim-orthy.jpg" alt="Nishat Tasnim Orthy" style="width:112px;height:112px;border-radius:50%;object-fit:cover;object-position:40% 22%;border:2px solid var(--b);margin-bottom:10px"><div class="name">Nishat Tasnim Orthy</div><div class="aff">School of Business and Economics, North South University</div><div class="focus">Focuses on Bangla psychological measurement of cultural intelligence and moral disengagement.</div></div>
+</div>
+</section>
+
+<section id="climate" class="theme clim">
+<div class="theme-head"><h3>Climate Change and Mental Health</h3><p>Climate anxiety, heat, energy insecurity and coping in climate-vulnerable regions.</p></div>
+<div class="people">
+<div class="person"><img src="uploads/sumaiya-alam-shreyoshi.jpg" alt="Sumaiya Alam Shreyoshi" style="width:112px;height:112px;border-radius:50%;object-fit:cover;object-position:center 30%;border:2px solid var(--b);margin-bottom:10px"><div class="role">Research Assistant</div><div class="name">Sumaiya Alam Shreyoshi</div><div class="aff">School of Business and Economics, North South University</div><div class="focus">Focuses on the psychological impacts of climate change, with a focus on mental health in Bangladesh.</div></div><div class="person"><div class="ph">Add photo</div><div class="role">[Role]</div><div class="name">[Member name]</div><div class="aff">[Affiliation]</div><div class="focus">[One line on their research focus]</div></div>
+</div>
+</section>
+
+<section id="personality" class="theme pers">
+<div class="theme-head"><h3>Personality</h3><p>Trait models, narrative identity and individual differences across cultures.</p></div>
+<p style="margin:0;font-size:14px;color:var(--soft)">Members to be announced. Interested? <a href="lab.html#join">See how to join</a>.</p>
+</section>
+
+<div class="card" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+<div style="flex:1 1 420px"><div style="font-family:var(--serif);font-size:18px;font-weight:600">Interested in joining?</div><div style="font-size:14px;color:var(--mid)">We welcome students and collaborators in all four themes.</div></div>
+<a href="lab.html#join" style="display:inline-flex;align-items:center;min-height:44px;padding:0 20px;background:var(--blue);color:#fff;border-radius:6px;font-size:14px;font-weight:600;text-decoration:none">How to join</a>
+</div>
+
+</main>
+
+<footer>
+<p style="margin:0">© 2026 Lumen and Self Lab · Mushfiqul Anwar Siraji · North South University, Bangladesh · <a href="index.html">Academic Profile</a></p>
+</footer>
+<script>
+(function(){
+  function inPhotoArea(t){ return t && t.closest && (t.closest('.person') || t.closest('main .card')); }
+  document.addEventListener('contextmenu', function(e){ if (inPhotoArea(e.target)) e.preventDefault(); });
+  document.addEventListener('dragstart', function(e){ if (e.target && e.target.tagName === 'IMG') e.preventDefault(); });
+})();
+</script>
+</body>
+</html>
